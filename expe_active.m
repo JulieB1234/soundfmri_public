@@ -1,10 +1,9 @@
 
 %CENIR answer box: HHSC - 2x4 - c // HID NAR BYGRT
 
-% -------------- What remains to do ---------------------------------------
-% - LoadParameters before or after Calibration ?
-% - measure delays and time lost because of the CheckFix loop
-% - get rid of feedback stuff ?
+%% input = SOUND files
+%% output = (i) behavioural .mat file and (ii) raw scanning files (fMRI platform scanner)
+
 
 %Clear workspace
 close all;
