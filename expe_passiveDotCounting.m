@@ -1,5 +1,9 @@
 %Passive Condition -- fMRI (juliechezboyer@wanadoo.fr) -- april 2022
 
+%% input = SOUND files + quiz.csv
+%% output = (i) behavioural .mat file and (ii) raw scanning files (fMRI platform scanner) and (iii) eyelink .edf file
+
+
 %% POUR LES ISI
 % - pour homogénéiser les durées entre les différents types d'essais,
 % rajouter un délai aux questions type 'RT' et 'None'
