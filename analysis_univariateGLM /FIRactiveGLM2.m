@@ -23,15 +23,8 @@
 %   point per condition)
 % - apparently requires F contrast for inference
 
-% Why F-contrast here?
-% A FIR GLM creates multiple betas per condition (one per time bin) 
-% If you want to test whether condition A ≠ condition B at any time point 
-% (i.e. anywhere across the temporal profile), an F-contrast that tests the 
-% set of binwise differences is appropriate (omnibus)
-% A T-contrast that sums bins (e.g. average across bins) can test directional
-% effect averaged across time, or you can create separate T tests for each bin
-% So: use F to detect any timepoint difference, and T to test specific 
-% directional hypotheses.
+%% INPUT = 8mm smoothed pre-processed scans for each subject and condition (.nii files) + indiv multiple nuisance regressors .txt files + indiv behav .mat files
+%% OUPUT = 1st level SPM .mat files and contrasts ==> for SPM GUI
 
 
 %% for now -- 1/10/25
