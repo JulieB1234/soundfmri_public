@@ -6,7 +6,11 @@
 % snr1 (~ baseline removal)
 % - doing it first for whole brain activations
 % -> grp activations = done
-% -> NOW: individualize the activations to gain preciseness?
+
+%% INPUT =  GLMsingle folders and .mat results (we want TYPEC_FITHRF_GLMDENOISE.mat)
+%% OUTPUT = indiv figures for univariate single trial betas dynamics AND .mat files = z-scored single-trial betas for each subject, each condition, each SNR, each voxel of the full volume
+
+
 
 
 %% Set up
