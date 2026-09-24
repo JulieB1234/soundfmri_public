@@ -1,6 +1,6 @@
 # soundfmri_public
 ##### See codes' comments for details about input and output
-##### Data is available on reasonable request to juliechezboyer@wanadoo.fr
+##### Data will be available upon reasonable request to juliechezboyer@wanadoo.fr
 ##### See preprint https://doi.org/10.64898/2026.06.17.732590
 
 ## 1. Experimental scripts (main directory) - MATLAB
