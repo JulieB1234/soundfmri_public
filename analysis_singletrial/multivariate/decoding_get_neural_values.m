@@ -1,6 +1,11 @@
 % j boyer / the decoding toolbox / chatgpt
 % for soundfmri - january 2026
 
+%% INPUT = GLMsingle modelC .mat file for each subject and condition + indiv clusterROI mask
+%% OUTPUT =
+% decoding_out.mat -> decision values
+% res_AUC.mat -> AUC -> output -> AUC value
+% true_labels.mat -> initial SNR labels (1-5)
 
 %% objective
 % For each fold (run r = 1..9):
@@ -261,7 +266,4 @@ for iroi = 2
         end
     end
 end
-%% OUTPUT
-% decoding_out.mat -> decision values
-% res_AUC.mat -> AUC -> output -> AUC value
-% true_labels.mat -> initial SNR labels (1-5)
+
