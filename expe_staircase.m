@@ -20,7 +20,9 @@
 %   3/ identification task with audibility task and audibility 1 or 2 are
 %   considered misses
 
-%add a highlight where it is missing
+%% input = SOUND files
+%% output = (i) behavioural .mat file and (ii) raw scanning files (fMRI platform scanner) and (iii) eyelink .edf file
+
 
 %Clear workspace
 close all;
