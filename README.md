@@ -1,5 +1,5 @@
 # soundfmri_public
-##### See codes' comments for details about input and output
+##### See codes' comments for details about input and output (except python code)
 ##### Data will be available upon reasonable request to juliechezboyer@wanadoo.fr
 ##### See preprint https://doi.org/10.64898/2026.06.17.732590
 
@@ -93,13 +93,15 @@ treeBH_univariate.m
 
 ### 5.3. decoding (using TheDecodingToolbox) - directory multivariate
 - Run decoder and extract decision values (= neural values)
-  - decoding_get_neural_values.m
-  - extract_neural_values.m
+  - decoding_get_neural_values.m (for single-trial values)
+  - extract_neural_values.m (for figures)
 - Then convert single trial data from .mat files to .csv for python compatibility
   - convert_single_toCSV.m
 - Then run python model comparison script (VPR / bifurcation score / AUC prediction + treeBh correction all in one)
   - model_comp_prediction_NOvpr.ipynb
   - (old version = model_comp_prediction_vpr.ipynb - with VPR penalty)
+  - INPUT = .csv single-trial decision values (<- convert_csv.mat) and .csv behavioural data
+  - OUTPUT = figures
 
 
 
