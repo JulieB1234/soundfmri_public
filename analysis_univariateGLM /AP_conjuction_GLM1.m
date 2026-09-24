@@ -10,8 +10,8 @@
 % we will keep the 'PMOD V2' analysis, which seems to be the most powerful
 % so far
 
-%% for now: 8 smoothed, not 5
-% tried 5mm now (january 4th)
+%% INPUT = 8mm smoothed pre-processed scans for each subject and condition (.nii files) + indiv multiple nuisance regressors .txt files + indiv behav .mat files
+%% OUPUT = 1st level SPM .mat files and contrasts ==> for SPM GUI
 
 %%
 clear
