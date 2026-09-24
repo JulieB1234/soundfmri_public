@@ -3,6 +3,10 @@
 % part 2 (use z_subj already extracted and zscored for each participant
 % (dim 5 snrs x 7 timepoints x 389436 voxels)
 
+
+%% INPUT = z-scored values for each time-point and each ROI voxel and each subject and each condition (.mat files) => then partII
+%% OUTPUT = figures (BOLD time course per SNR in different ROIs / conditions)
+
 % setup
 clear; clc; close all;
 addpath('/Applications/spm12');
