@@ -7,7 +7,7 @@
 % - doing it first for whole brain activations
 % -> grp activations = done
 
-%% INPUT =  GLMsingle folders and .mat results (we want TYPEC_FITHRF_GLMDENOISE.mat) + indiv cluster ROIs + behav files (for sanity checks)
+%% INPUT =  GLMsingle folders and .mat results (we want TYPEC_FITHRF_GLMDENOISE.mat) + indiv cluster ROIs (.nii files = 3D) + behav files (for sanity checks)
 %% OUTPUT = indiv figures for univariate single trial betas dynamics AND .mat files = z-scored single-trial betas for each subject, each condition, each SNR, each voxel of the ROIs
 
 
