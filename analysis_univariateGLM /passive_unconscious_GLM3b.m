@@ -16,6 +16,9 @@
 % 9 10 11 12 resp screens
 % 13 keypress
 
+%% INPUT = 8mm smoothed pre-processed scans for each subject and condition (.nii files) + indiv multiple nuisance regressors .txt files + indiv behav .mat files
+%% OUPUT = 1st level SPM .mat files and contrasts ==> for SPM GUI
+
 
 clear;
 %clear global options;
