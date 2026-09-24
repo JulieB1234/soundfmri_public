@@ -2,7 +2,8 @@
 
 A - MATLAB
 
-1/ experiment scripts for fMRI acquisition: Active, Passive
+1/ experiment scripts for fMRI acquisition: Active, Passive, PassiveDotCounting (control condition)
+require SOUNDS and QUIZ (for passive condition) and STAIRCASE code
 
 2/ behav analyses, active / passive
 
