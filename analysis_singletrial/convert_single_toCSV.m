@@ -1,8 +1,7 @@
 %% soundfmri
 % october 2025 J Boyer
 % goal = extract subjects' single-trial beta estimate, one per trial, in a
-% given ROI (for now just right audit in active condition) to give Thomas in
-% .csv file
+% given ROI in .csv file
 
 % update 13/11/25
 % we want single trial single voxel data
@@ -17,6 +16,9 @@
 % all cluster
 % only audit voxels of cluster
 % all but audit voxels of cluster
+
+%% INPUT = output from extractionsingle_indivclusters_v2.m (.mat files = 1 value per trial, per voxel in a ROI, per subject / condition / ROI (A1/noA1))
+%% OUTPUT = a list of values, one per trial + corresponding SNR label => for decoding (one .csv file per subject / condition / ROI)
 
 %% Set up
 clear; clc; close all;
@@ -46,7 +48,7 @@ input_dir = '/Volumes/DisqueJulie/JulieBoyer2025/SOUNDFMRI 2025/MVPA/withTDT/new
 correction = 'unc001';
 
 roi_list = {'_A1_thr10','_NoA1_thr10'};
-%roi_list = {'left_IFG_ins','leftSTG','middL','right_IFG_ins','rightSTG'};
+
 
 %% loop across conditions and subjects to load data
 for iroi = 1:numel(roi_list)
