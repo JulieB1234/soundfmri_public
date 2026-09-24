@@ -2,7 +2,7 @@
 %CENIR answer box: HHSC - 2x4 - c // HID NAR BYGRT
 
 %% input = SOUND files
-%% output = (i) behavioural .mat file and (ii) raw scanning files (fMRI platform scanner)
+%% output = (i) behavioural .mat file and (ii) raw scanning files (fMRI platform scanner) and (iii) eyelink .edf file
 
 
 %Clear workspace
