@@ -3,6 +3,9 @@
 
 % updated 14.11.25
 
+%% INPUT =indiv .mat behav files (active and passive)
+%% OUTPUT = indiv figures (active and passive)
+
 %% Setup
 
 clear; clc;
