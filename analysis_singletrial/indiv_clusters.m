@@ -1,6 +1,9 @@
 %% Soundfmri: compute spm T maps and thresholds to make individual masks with univariate results
 % J Boyer - Oct. 2025
 
+%% INPUT =  indiv univariate pmod (GLM1) results (SPM.mat) 
+%% OUTPUT = indiv .nii clusters masks => for cluster_ROIs.m
+
 
 %% set up
 clear; clc; close all;
