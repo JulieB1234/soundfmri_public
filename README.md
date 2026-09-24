@@ -10,7 +10,6 @@
 - expe_staircase.m (before all sessions)
 - expe_pdc.m (control passive dot counting)
 
-Input: sounds files and quiz.csv 
 
 ## 2. Analyses scripts for univariate fMRI (directory analysis_univariateGLM) - MATLAB
 1st level codes ==> then manual 2nd level in SPM GUI
