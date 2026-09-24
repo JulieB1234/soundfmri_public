@@ -7,8 +7,8 @@
 % Regress out residuals (if still using blink_regressout)
 % Z-score and Epoch.
 
-%% to do next: epoch to fixpoint to investigate pre stim drift
-% must create new trialfun.m functions for that
+%% input = indiv .asc eyelink files (ca1.asc for active condition subject 1, cp1.asc for passive condition subject 1, etc.)
+%% output = .mat files with pre-processed data
 
 %% setup
 clear; clc; close all;
@@ -18,7 +18,7 @@ addpath('/Volumes/DisqueJulie/JulieBoyer2025/pupil_2025/functions/');
 edf2ascPath = '/Users/julieboyer/Desktop/edf2asc-mac';
 
 conditions = {'active','passive'};
-%conditions = {'passive'};
+
 datafolder = '/Volumes/DisqueJulie/JulieBoyer2025/pupil_2025/data_pupil/';
 outputdir = '/Volumes/DisqueJulie/JulieBoyer2025/pupil_2025/results/preprocessed_2026/';
 
