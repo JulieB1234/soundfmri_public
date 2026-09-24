@@ -1,64 +1,64 @@
 %Passive Condition -- fMRI (juliechezboyer@wanadoo.fr) -- april 2022
 
 %% POUR LES ISI
-% - pour homogénéiser les durées entre les différents types d'essais,
-% rajouter un délai aux questions type 'RT' et 'None'
-% - piloter durées pour questions type 'None' et 'RT', pour objectif:
-% moyenne globale autour de 9 sec (sachant que la moyenne quiz / mw est à
+% - pour homogÃ©nÃ©iser les durÃ©es entre les diffÃ©rents types d'essais,
+% rajouter un dÃ©lai aux questions type 'RT' et 'None'
+% - piloter durÃ©es pour questions type 'None' et 'RT', pour objectif:
+% moyenne globale autour de 9 sec (sachant que la moyenne quiz / mw est Ã 
 % 11.3)
 
 %% POUR LE NB D'ESSAIS
-% - contrainte: ce doit être un multiple du nb de questions (4)
+% - contrainte: ce doit Ãªtre un multiple du nb de questions (4)
 % - actuellement: on garde 4 essais / condition / bloc mais on essaie
 % d'augmenter le nb de blocs (11?) mais en faisant des pilotes
-% comportementaux préalables avec les nouveax timestamps pour pouvoir bien
-% mesurer les délais!
+% comportementaux prÃ©alables avec les nouveax timestamps pour pouvoir bien
+% mesurer les dÃ©lais!
 
 %% POUR LES SNR
-% - autres études préalables (EEG / sEEG) : il semble qu'il y ait un shift
+% - autres Ã©tudes prÃ©alables (EEG / sEEG) : il semble qu'il y ait un shift
 % de 2dB entre actif / passif
 % - on peut estimer le seuil de perception autour de -7.5 dB en passif donc
 % [-Inf;-10.5;-7.5;-4.5;0] en premier lieu
 
-%% Changement de script avril 2024 --> décorrélation des stim auditifs et des questions
+%% Changement de script avril 2024 --> dÃ©corrÃ©lation des stim auditifs et des questions
 % car on voit dans la condition passive initiale des activations qui
-% peuvent être de la préparation motrice ; hypothèse que le fait d'entendre
-% le son, même en condition passive, fait préparer une réponse motrice à
-% l'une des quatre tâches distractives qui suivent toujours le son (même si
-% le délai est variable)
+% peuvent Ãªtre de la prÃ©paration motrice ; hypothÃ¨se que le fait d'entendre
+% le son, mÃªme en condition passive, fait prÃ©parer une rÃ©ponse motrice Ã 
+% l'une des quatre tÃ¢ches distractives qui suivent toujours le son (mÃªme si
+% le dÃ©lai est variable)
 
-%% V1 : juste introduction d'une variabilité du nb de questions qui suivent un stim
-% - pour l'instant soit 0, soit 1, soit 2 questions après un stim donné
-% - en contrebalançant les types de question qui passent en position 2
-% - mais on garde la séquence stim / question donc pas sûre d'être très
-% efficace sur le contrôle de la préparation motrice lors du stim
+%% V1 : juste introduction d'une variabilitÃ© du nb de questions qui suivent un stim
+% - pour l'instant soit 0, soit 1, soit 2 questions aprÃ¨s un stim donnÃ©
+% - en contrebalanÃ§ant les types de question qui passent en position 2
+% - mais on garde la sÃ©quence stim / question donc pas sÃ»re d'Ãªtre trÃ¨s
+% efficace sur le contrÃ´le de la prÃ©paration motrice lors du stim
 
 %% V2 : enlever les questions ; on remplace par un changement de couleur de la croix de fixation
 % - le sujet devra dire oralement en fin de bloc combien de fois la croix
-% aura été d'une couleur donnée
-% - enjeu ici = décorréler au maximum les changements de couleur des stims
+% aura Ã©tÃ© d'une couleur donnÃ©e
+% - enjeu ici = dÃ©corrÃ©ler au maximum les changements de couleur des stims
 % auditifs
 
-%% V3 : le point rouge devient rare et un évènement spécifique distinct du reste
+%% V3 : le point rouge devient rare et un Ã©vÃ¨nement spÃ©cifique distinct du reste
 
-%% V4 : version corrigée avec Claire et Nathan  -- 25/04/224
+%% V4 : version corrigÃ©e avec Claire et Nathan  -- 25/04/224
 % - changer boucle : point noir permanent puis randi --> changement couleur
-% sur 0.2 sec ; puis randi --> avant ou après stim
+% sur 0.2 sec ; puis randi --> avant ou aprÃ¨s stim
 % - randomisation d'une des 3 couleurs pour le dot
-% - séparer black des autres couleurs sinon ça biaise les fréquences
-% - la tâche sera : parmi 3 couleurs différentes du noir (bleu / vert / rouge), combien de fois
-% est apparue brièvement (0.2 sec) l'une d'elles pour chaque bloc ?
-% - rajouter à chaque bloc : nouvelle couleur à compter au prochain
-% - feedback expérimentateur en fin de bloc
-% - fréquence à adapter : obj entre 13 et 14 points par bloc (1/3)
-% - les délais sont à adapter (rajouter des timestamps pour calculer les
+% - sÃ©parer black des autres couleurs sinon Ã§a biaise les frÃ©quences
+% - la tÃ¢che sera : parmi 3 couleurs diffÃ©rentes du noir (bleu / vert / rouge), combien de fois
+% est apparue briÃ¨vement (0.2 sec) l'une d'elles pour chaque bloc ?
+% - rajouter Ã  chaque bloc : nouvelle couleur Ã  compter au prochain
+% - feedback expÃ©rimentateur en fin de bloc
+% - frÃ©quence Ã  adapter : obj entre 13 et 14 points par bloc (1/3)
+% - les dÃ©lais sont Ã  adapter (rajouter des timestamps pour calculer les
 % ISI notamment) + comparaison avec les autres conditions
 % - enlever les datas inutiles relatives aux changements de couleur des
 % autres versions
-% - puis ré incorporer dans la version fMRI+eyelink
+% - puis rÃ© incorporer dans la version fMRI+eyelink
 
 %% V5 : modif boucle en 2 boucles principales
-% - 1 boucle avec proba 1/3 où on met le stim entre deux points de couleur
+% - 1 boucle avec proba 1/3 oÃ¹ on met le stim entre deux points de couleur
 % potentiels
 % - 1 boucle 'else' avec juste le stim
 
@@ -117,7 +117,7 @@ dotY = yCenter;
 %targetDotFrequency = 0.4; % Adjust as needed, e.g., every 20% of the trials
 targetDotDuration = 0.2; % Duration of red dot appearance in seconds
 % Define jittered delays for fixdot and auditory stimulus
-min_delay_fixdot = 1; % Minimum delay for fixdot color flip (tampon avant / après chaque stim : 1 sec minimum)
+min_delay_fixdot = 1; % Minimum delay for fixdot color flip (tampon avant / aprÃ¨s chaque stim : 1 sec minimum)
 max_delay_fixdot = 4.5; % Maximum delay for fixdot color flip
 
 % Provide Eyelink with details about the graphics environment
@@ -211,7 +211,7 @@ for i = 1:stimuli_nb
     audiofile_stim{i} = [audiodir char(stimuli(i)) '.wav'];
 end
 nrchannels = 2;
-soundcardNumber = []; %for MRI or eyelink PC; depends on the device; Julie's laptop = 1; ThÃ©a's laptotp = 2
+soundcardNumber = []; %for MRI or eyelink PC; depends on the device; Julie's laptop = 1; ThÃƒÂ©a's laptotp = 2
 
 %Opening and setting audio devices
 InitializePsychSound(1);
@@ -319,7 +319,7 @@ add_file.endexp = nan(trials_nb, 1); %end of the experiment
 %% Set up screen
 
 %Starting
-message = 'Prêt à démarrer.';
+message = 'PrÃªt Ã  dÃ©marrer.';
 DrawFormattedText(window, message, 'center', 'center', black);
 Screen('Flip', window);
 fprintf('\n Please press SPACE when ready to start. \n \n');
@@ -408,7 +408,7 @@ for i=1:trials_nb %_per_block
             PsychPortAudio('Stop', panoise);
             PsychPortAudio('DeleteBuffer', noise_buffer);
             message = ['Bloc ' num2str(last_block) '/' num2str(blocks_nb)...
-                ' fini.\n\n Préparation du prochain bloc...'];
+                ' fini.\n\n PrÃ©paration du prochain bloc...'];
             DrawFormattedText(window, message, 'center', 'center', black);
             Screen('Flip', window);
             %feedback = false; % Training finished, remove feedback
@@ -433,7 +433,7 @@ for i=1:trials_nb %_per_block
         if trials.block(i) == 0
             message = ['Prochain bloc = ' num2str(trials.block(i)) '/' num2str(blocks_nb)];
         else
-            message = ['Combien avez-vous compté de points de couleur ' nameColors{trials.target_color(i-1)} ' ? \n\n\n Prochain bloc = ' num2str(trials.block(i)) '/' num2str(blocks_nb)];
+            message = ['Combien avez-vous comptÃ© de points de couleur ' nameColors{trials.target_color(i-1)} ' ? \n\n\n Prochain bloc = ' num2str(trials.block(i)) '/' num2str(blocks_nb)];
         end
         message = [message '\n\n\n Compter les points de couleur ' nameColors{trials.target_color(i)} '\n\n\n Appuyer sur 1 pour commencer le bloc \n\n\n'];
         fprintf(message);
@@ -453,7 +453,7 @@ for i=1:trials_nb %_per_block
         end
 
         %Wait for experimenter to press SPACE and for scan to start (ie, keypress 't')
-        message = 'Le bloc va bientôt commencer...';
+        message = 'Le bloc va bientÃ´t commencer...';
         DrawFormattedText(window, message, 'center', yCenter, black);
         Screen('Flip', window);
         fprintf('\n Please press SPACE when ready to start. \n \n');
@@ -529,7 +529,7 @@ for i=1:trials_nb %_per_block
             after = 1;
         end
         if before == 1 % before stim (50%)
-            newColorIndex = randi(numel(dotColors)); % rajouter une boucle pour éviter de compter le noir
+            newColorIndex = randi(numel(dotColors)); % rajouter une boucle pour Ã©viter de compter le noir
             newColor = dotColors{newColorIndex};
             target_dot = 1;
             % Draw the fixation dot with the new color
@@ -747,8 +747,8 @@ total_dots_this_block = sum(color_count_red{trials.block(i-1)+1}) + sum(color_co
 fprintf('\n\n\n Pendant ce bloc il y a eu %i point(s) de couleur %s \n\n Et un total de %i points de couleur \n\n', frequency_this_block, nameColors{trials.target_color(i-1)}, total_dots_this_block);
 
 % Announce end of experiment & close audio devices
-fprintf('\nExpérience terminée, durée = %s\n\n', datestr(endtime-starttime, 'HH:MM:SS')); %Overall stats:\n', datestr(endtime-starttime, 'HH:MM:SS'));
-DrawFormattedText(window, 'Expérience terminée, merci !', 'center', 'center', black);
+fprintf('\nExpÃ©rience terminÃ©e, durÃ©e = %s\n\n', datestr(endtime-starttime, 'HH:MM:SS')); %Overall stats:\n', datestr(endtime-starttime, 'HH:MM:SS'));
+DrawFormattedText(window, 'ExpÃ©rience terminÃ©e, merci !', 'center', 'center', black);
 Screen('Flip', window);
 PsychPortAudio('Stop', pamaster);
 PsychPortAudio('DeleteBuffer');
