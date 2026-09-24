@@ -17,9 +17,6 @@
 % only audit voxels of cluster
 % all but audit voxels of cluster
 
-%% INPUT = output from extractionsingle_indivclusters_v2.m (.mat files = 1 value per trial, per voxel in a ROI, per subject / condition / ROI (A1/noA1))
-%% OUTPUT = a list of values, one per trial + corresponding SNR label => for decoding (one .csv file per subject / condition / ROI)
-
 %% Set up
 clear; clc; close all;
 %subjects = [2 3 4 5 6 7 8 9 10 12 13 14 15 18 19 20 21 22 23 24 26 27 28 29 30 32]; % NO 25
