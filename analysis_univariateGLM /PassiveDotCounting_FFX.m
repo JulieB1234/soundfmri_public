@@ -1,6 +1,10 @@
 %% Pipeline for fMRI processing — TRUE 1st-level Fixed-Effects (FFX) Model
 % Adapted for Fixed-Effects Group Analysis across all subjects
 
+%% INPUT = 8mm smoothed pre-processed scans for each subject and condition (.nii files) + indiv multiple nuisance regressors .txt files + indiv behav .mat files
+%% OUPUT = 1st level SPM .mat files and contrasts ==> for SPM GUI
+
+
 clear; clc; close all;
 addpath('/Applications/spm12/');
 
