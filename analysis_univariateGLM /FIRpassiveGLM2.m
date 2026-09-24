@@ -14,6 +14,9 @@
 %% 12/01/26
 % modif for noSNR1
 
+%% INPUT = 8mm smoothed pre-processed scans for each subject and condition (.nii files) + indiv multiple nuisance regressors .txt files + indiv behav .mat files
+%% OUPUT = 1st level SPM .mat files
+
 %% setups
 
 clear; clc; close all; 
