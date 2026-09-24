@@ -3,6 +3,9 @@
 clear; clc; close all; 
 addpath('/Applications/spm12/');
 
+%% INPUT = 2nd level SPM.mat files for analyses to add in the correction
+%% OUTPUT = stats text + .nii thresholded fMRI maps (1 value per voxel)
+
 %% 1. Configuration & Setup
 alpha_global = 0.05;
 
