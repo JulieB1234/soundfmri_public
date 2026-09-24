@@ -3,8 +3,9 @@
 % Warning: i suppressed the part that checked glmsingle hasn't be run yet
 % for the selected subject so check manually beforehand
 
-%% 20/11/25
-% version for SMOOTHED scan data
+%% INPUT = UNsmoothed pre-processed scans for each subject and condition (.nii files) + indiv multiple nuisance regressors .txt files + univariate SPM .mat files for stim onsets
+%% OUPUT = GLMsingle folders and .mat results (we want TYPEC_FITHRF_GLMDENOISE.mat)
+
 
 %% set up
 % Start fresh
