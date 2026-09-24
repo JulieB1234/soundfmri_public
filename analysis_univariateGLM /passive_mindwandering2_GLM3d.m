@@ -1,9 +1,6 @@
 %% New new pipeline for fMRI processing - SOUNDFMRI -- Mindwandering probes in Passive condition
 % feb 2026 omg J Boyer
-% AI - improved, V3  because other models sucked
-% main idea now: take into account all trials' stim intensity using pmod
-% and test for heard / not heard; AI says its also better to do pmod on
-% heard not heard lets try it -- with a binary regressor though, -1 or +1
+
 
 %% new version (1)
 % parametric modulation for audibility = either -1 or 1
@@ -11,69 +8,11 @@
 % try putting vowels A and E together to improve power
 % + non interest regressors = fixpoint + response screen (4 types) + keypress
 
-% run this one 1st level for all and then 2nd level
-% if shitty try:
-% - differentiating A and E
-% - pmod for snr level but not 'heard / not heard' (though gemini says its
-% not good because pmod won't account for stim effect properly since
-% applied to heard (strong snrs) vs not heard (weak snrs)
-% - pmod heard / not heard = 1 / 0
-% - try a simpler model like the first one but improved? A/E together?
-% doesnt take into account stim intensity effect but..
-% - try orthogonalization off? cf. explanation later
 
-%% for now: add sanity check = contrast for stim intensity pmod ++
-% works okay at indiv level so global idea = fine BUT pmod on HnotH that
-% way gives nothing or very weird uncorrected results + a lot of indivs
-% have invalid contrasts
+%% INPUT = 8mm smoothed pre-processed scans for each subject and condition (.nii files) + indiv multiple nuisance regressors .txt files + indiv behav .mat files
+%% OUPUT = 1st level SPM .mat files and contrasts ==> for SPM GUI
 
-%% V2: 
-% - pmod heard not heard but 0 for not heard and 1 for heard
-% - +/- cancel orthogonalization
 
-%% 16 02 26 - V2
-% pmod HnotH 0/1
-% dont touch orthog°
-% try w/o global options
-%% still some invalid contrast (eg S6 and it's not a code pb --> pmod on intensity w/ same length works)
-%% also for subjects where it works it still gives nonesense results
-
-%% 17 02 26 - V3
-% try no orthog° - modified code in timing-files
-% + back to HnotH pmod -1/1
-% S2 + S6 (usually S2 works but is shitty and S6 has invalid contrast)
-% ccl: won't work because some subjects sometimes never have 'heard or 'not
-% heard' in a full run ?? + anyway results are shitty when it works
-
-%% +/- V4: 17-18 02 2026
-% - no pmod for HnotH -> 
-% > stim not probed + pmod intensity
-% > stim probed heard + pmod intensity
-% > stim probed not heard + pmod intensity
-% - +/- cancel orthogonalization
-
-%% i think i get why some subjects don't work despite missing regressors dealing
-% it's because i didnt fix the part of timing files where it gives missing
-% regressors -> it gives vectors of a length of 9 instead of 12 regressors
-% because it doesn't include pmod regs +++
-% fix it
-% then maybe re try pmod for Hnoth ......
-
-%% 18 02 2026
-% still invalid contrasts for S6
-% (1) main reason = no pmod regressors in runs where an onset is missing (and
-% dealt with with an outside onset = 1000sec); eg for S6 run8 there is no
-% "heard" so regressors are stim heard / stim not heard / pmod / stim not
-% probed / pmod / ... so 1 regressor less than expected and then contrast
-% is all shifted
-% so deal w/ it
-% (2) checking manually the design matrix i see for run0 of S6 the pmod
-% column for not heard pmod intensity is empty which makes no sense because
-% there are several onsets for not heard
-
-%% what about unconscious
-% same but with just a 1 in not heard? ...
-% or re do a model with no stim as a specific regressor for no stim?
 
 %% SO NEW REGRESSORS
 % 1 stim heard
