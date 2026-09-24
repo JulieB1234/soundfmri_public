@@ -5,6 +5,9 @@ clear
 clc
 close all
 
+%% INPUT = UNsmoothed pre-processed scans for each subject and condition (.nii files) + indiv multiple nuisance regressors .txt files + univariate SPM .mat files for stim onsets
+%% OUPUT = GLMsingle folders and .mat results (we want TYPEC_FITHRF_GLMDENOISE.mat)
+
 
 % Load SPM, etc.
 addpath('/Applications/spm12/');
