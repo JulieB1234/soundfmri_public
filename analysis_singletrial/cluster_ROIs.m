@@ -12,9 +12,7 @@
 % brainnetome atlas is not specific enough --> Harvard Oxford for Heschl
 % gyrus ++
 
-%% Main Methods text (recommended)
 % Anatomically constrained ROIs
-% 
 % Anatomical regions of interest (ROIs) corresponding to primary auditory 
 % cortex were defined using the Harvard–Oxford probabilistic cortical atlas
 % distributed with FSL. Bilateral Heschl’s gyrus probability maps were used
@@ -33,17 +31,9 @@
 % individual functional space and used for subsequent multivariate and
 % signal-extraction analyses.
 
-% A probability threshold of 25(XX)% was chosen to balance anatomical 
-% specificity and inter-individual variability in Heschl%s gyrus morphology.
+%% INPUT =  indiv univariate pmod (GLM1) results (SPM.mat) + atlas ROIs
+%% OUTPUT = 4 cluster ROIs per subject = active A1 (cluster x atlas heschl), active noA1 (cluster minus atlas heschl), passive A1 and passive noA1 => .nii files 
 
-% Slightly more technical version (if reviewers in your field expect it)
-% The Harvard–Oxford probabilistic atlas provides voxelwise probabilities 
-% (0–100%) reflecting the proportion of subjects in whom each voxel belongs
-% to a given anatomical label. To avoid inclusion of low-confidence voxels, 
-% probabilistic maps were thresholded at 25% prior to binarization. 
-% Reslicing was performed from MNI space to subject-specific functional 
-% space using trilinear interpolation, resulting in anatomically constrained
-% ROIs matched to the spatial resolution of the functional data.
 
 %% setup 
 clc; clear; close all; 
