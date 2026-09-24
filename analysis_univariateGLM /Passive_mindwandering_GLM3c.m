@@ -3,38 +3,10 @@
 % juliechezboyer@wanadoo.fr / soundfmri@gmail.fr
 % this is inspired from Alizee Lopez-Persem's script
 
-%% This is created because a unique big matrix with all regressors of interest wasn't possible
-% indeed, several regressors regarding the same event provide invalid
-% contrasts in spm, so we cannot have one matrix with both audibility
-% ratings and stimulus intensity apparently
-% so the idea is to have:
-% - 1 matrix with only audibility ratings to see how it activates
-% - 1 matrix allowing to study interaction between audibility ratings and
-% stimulus intensity, i guess then we will have to create numerous
-% regressors, eg "snr1audib1vowel1", "snr1audib1vowel2", etc. so 4 x 5 x 2
-% stim types ie 40 regressors! and then we adapt the contrasts tot est for
-% what we want; if it works maybe we can get back to the idea of one big
-% matrix for all... 
-% Also we have to test both pmod and classical models for audibility
-% ratings ; and for pmod, we could do 1/2/3/4 or 0/1 or a mean-centered
-% version, ...
 
-%% problem of invalid contrasts: 
-% in some cases, for a given run subjects never answer 'audibility 4' so
-% the corresponding regressor (either condition 4 or 8, depending on the
-% vowel) is missing; in timing_files computing i fixed it by adding an
-% onset outside of the scanning timing but it makes contrasts invalid when
-% we want to test for them (seems logical); for ex, subj10 run3, has no
-% onset for condition 8 (audibility4 / vowelE), therefore the contrast [-1
-% 1 1 1 -1 1 1 0 0 0 0 0] is invalid 
-% one solution could be to add to the 'options' structure, the list of runs
-% of each subject, that are missing a regressor, and then in the contrast
-% computing, take it into account (maybe a more efficient way would've been
-% to directly suppress the columns with missing onsets ? but we would still
-% have to modify the contrasts accordingly so for now let's not do that)
+%% INPUT = 8mm smoothed pre-processed scans for each subject and condition (.nii files) + indiv multiple nuisance regressors .txt files + indiv behav .mat files
+%% OUPUT = 1st level SPM .mat files and contrasts ==> for SPM GUI
 
-% to do so i tried defining 'options' as a global variable to be able to
-% modify it across functions
 
 %%
 clear
@@ -151,19 +123,4 @@ if ismember('specify',options.steps_to_run) || ismember('estimate',options.steps
     end
 end
 
-%% 2nd level analysis -- NOT READY YET
 
-% options.serial=0; % With FIR, if this option is set to 1, and if parfor is not used, it will be slow
-%
-% if ismember('secondLevel',options.steps_to_run)
-%     % mkdir for 2nd level results
-%     % if exist([options.rootModels 'model' options.modelName filesep 'Second_level' filesep ''],'dir')
-%     %     rmdir([options.rootModels 'model' options.modelName filesep 'Second_level' filesep ''])
-%     % end
-%     BIGBATCH = SecondLevelParameters(options);
-%     % Loop across contrasts for the second level
-%     for mb=1:length(BIGBATCH)2,, tvs 2
-%         spm('defaults', 'FMRI');
-%         spm_jobman('run', BIGBATCH{mb});
-%     end
-% end
