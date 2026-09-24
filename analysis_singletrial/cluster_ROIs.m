@@ -31,7 +31,7 @@
 % individual functional space and used for subsequent multivariate and
 % signal-extraction analyses.
 
-%% INPUT =  indiv univariate pmod (GLM1) results (SPM.mat) + atlas ROIs
+%% INPUT =  indiv activation clusters done with indiv_clusters.m + atlas ROIs
 %% OUTPUT = 4 cluster ROIs per subject = active A1 (cluster x atlas heschl), active noA1 (cluster minus atlas heschl), passive A1 and passive noA1 => .nii files 
 
 
