@@ -1,14 +1,22 @@
 %% plotting pupil time course - soundfmri data
 % J Boyer 2026 - SNR vs Smallest T-tests
+
+% REQUIRES FIELDTRIP TOOLBOX
+
+%% input = .mat pre-processed files
+%% output = group figures (i) snr per snr ERP (ii) Heard / not heard ERP
+
 %% setup
 clear; clc; close all;
 addpath('/Applications/fieldtrip-20240916');
 ft_defaults;
-addpath('/Volumes/DisqueJulie/JulieBoyer2025/pupil_2025/functions/');
+% addpath('/Volumes/DisqueJulie/JulieBoyer2025/pupil_2025/functions/');
 
 conditions = {'active','passive'};
 plots = {'snr','hnoth'};
 nSNR = 5;
+
+% define threshold snr levels for each subject (active condition)
 snr3_subjs = [2 3 5 6 8 9 10 12 14 15 19 20 21 22 25 29 32];
 snr4_subjs = [4 7 13 18 23 24 26 27 28 30];
 
