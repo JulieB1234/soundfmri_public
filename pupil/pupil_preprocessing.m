@@ -2,6 +2,7 @@
 % j boyer 2026 (a urai 2016)
 
 % REQUIRES FIELDTRIP TOOLBOX
+% AND ANNE URAI REPOSITORY FUNCTIONS 
 
 %% fixed order
 % Interpolate/Clean blinks first (using the raw data)
