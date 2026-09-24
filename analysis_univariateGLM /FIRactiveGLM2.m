@@ -24,7 +24,7 @@
 % - apparently requires F contrast for inference
 
 %% INPUT = 8mm smoothed pre-processed scans for each subject and condition (.nii files) + indiv multiple nuisance regressors .txt files + indiv behav .mat files
-%% OUPUT = 1st level SPM .mat files and contrasts ==> for SPM GUI
+%% OUPUT = 1st level SPM .mat files
 
 
 %% for now -- 1/10/25
