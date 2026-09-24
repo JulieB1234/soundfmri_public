@@ -18,6 +18,9 @@
 
 %% jan26 using the version with cross classification so values for all snrs
 
+%% INPUT = output from decoding_get_neural_values.m
+%% OUTPUT = single-trial dynamics figures
+
 % setup
 clear; close all; clc;
 
