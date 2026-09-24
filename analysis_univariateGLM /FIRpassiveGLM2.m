@@ -69,8 +69,8 @@ if ismember('specify',options.steps_to_run) || ismember('estimate',options.steps
             sub_nb = num2str(isubj);
         end
 
-        %timing_files_FIRpassive(sub_nb); % do the FIR specific timing files if needed
-        timing_files_FIRpassive_noSNR1(sub_nb);
+        timing_files_FIRpassive(sub_nb); % do the FIR specific timing files if needed
+
         matlabbatch1 = FirstLevelParameters_FIRpassive(options,sub_nb);
         spm_jobman('run', matlabbatch1);
 
