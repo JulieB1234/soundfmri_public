@@ -101,7 +101,7 @@ treeBH_univariate.m
   - model_comp_prediction_NOvpr.ipynb
   - (old version = model_comp_prediction_vpr.ipynb - with VPR penalty)
   - INPUT = .csv single-trial decision values (<- convert_csv.mat) and .csv behavioural data
-  - OUTPUT = figures
+  - OUTPUT = figures + optional treeBh additional correction
 
 
 
