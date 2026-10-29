@@ -1,0 +1,15 @@
+# nb: if using a factorial matrix (active + passive sessions of each subject concatenated), repeat the lists of covariates twice in SPM GUI
+
+# covariates are given for each subject in order (subjects: 2 3 4 5 6 7 8 9 10 12 13 14 15 18 19 20 21 22 23 24 25 26 27 28 29 30 32; total = 27, main experiment)
+
+## AGE
+22	24	21	30	38	18	30	29	25	36	23	30	18	36	40	22	23	21	33	29	21	26	29	34	19	24	31
+
+## GENDER (0 means male, 1 means female)
+0	1	1	1	1	1	1	1	0	0	1	1	1	1	1	1	0	1	0	0	1	0	1	1	1	1	0
+
+## EDUCATION (0 means not neurology or cognitive sicence or psychology, 1 means one of these topics)
+0	1	0	0	0	0	1	0	0	0	0	0	1	0	0	1	0	1	0	1	0	0	1	0	0	0	0
+
+## SESSION ORDER (0 means active then passive, 1 means passive then active)
+1	0	1	1	0	0	0	1	1	0	1	1	0	0	1	1	1	0	0	1	0	1	0	1	0	1	0
