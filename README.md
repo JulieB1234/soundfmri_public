@@ -12,7 +12,7 @@
 
 
 ## 2. Analyses scripts for univariate fMRI (directory analysis_univariateGLM) - MATLAB
-1st level codes ==> then manual 2nd level in SPM GUI
+1st level codes ==> then manual 2nd level in SPM GUI (+ add covariates)
 
 ### GLM1 (parametric modulation)
 - AP_conjunction_GLM1.m and associated functions - for main parametric modulation analyses, Active & Passive conditions
