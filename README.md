@@ -1,6 +1,6 @@
 # soundfmri_public
 ##### See codes' comments for details about input and output (except python code)
-##### Data will be available upon reasonable request to juliechezboyer@wanadoo.fr (both 8-mm smoothed functional scans "s8wts" and unsmoothed functional scans "wts", already normalized in. MNI space)
+##### Data will be available upon reasonable request to juliechezboyer@wanadoo.fr (both 8-mm smoothed functional scans "s8wts" and unsmoothed functional scans "wts", already normalized in MNI space)
 ##### See preprint https://doi.org/10.64898/2026.06.17.732590
 
 ## 1. Experimental scripts (main directory) - MATLAB
